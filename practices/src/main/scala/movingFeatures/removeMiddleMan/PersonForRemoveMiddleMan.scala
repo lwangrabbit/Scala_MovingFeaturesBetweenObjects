@@ -4,8 +4,4 @@ class PersonForRemoveMiddleMan(val department: DepartmentForRemoveMiddleMan, val
   def this(name: String) = {
     this(null, name)
   }
-
-  def getManager(): PersonForRemoveMiddleMan = {
-    department.manager
-  }
 }

@@ -13,7 +13,8 @@ class RemoveMiddleManFact extends FunSpec with Matchers {
       val manager = new PersonForRemoveMiddleMan(managerName);
       val department = new DepartmentForRemoveMiddleMan(manager);
       val employee = new PersonForRemoveMiddleMan(department, "John");
-      val managerForEmployee = employee.getManager();
+      //val managerForEmployee = employee.getManager();
+      val managerForEmployee = employee.department.manager
       managerForEmployee.name should be(managerName)
     }
   }
