@@ -1,10 +1,15 @@
 package movingFeatures.extractClass
 
-class PersonForExtractClass(officeAreaCode: String, officeNumber: String) {
+class PersonForExtractClass(telephone:TelephoneNumber) {
 
   val name: String = "";
+  def getTelephoneNumber():String = {
+    telephone.getTelephoneNumber()
+  }
+}
 
-  def getTelephoneNumber(): String = {
+class TelephoneNumber(officeAreaCode:String, officeNumber:String) {
+  def getTelephoneNumber():String = {
     ("(" + officeAreaCode + ") ") + officeNumber
   }
 }

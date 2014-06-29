@@ -1,6 +1,6 @@
 package movingFeatures.moveField
 
-class AccountForMoveField(accountTypeForMoveField: AccountTypeForMoveField, interestRate:Double) {
+class AccountForMoveField(accountTypeForMoveField: AccountTypeForMoveField) {
   def interestForAmountDays(amount: Double, days: Int): Double = {
     getInterestRate() * amount * days / 365;
   }
