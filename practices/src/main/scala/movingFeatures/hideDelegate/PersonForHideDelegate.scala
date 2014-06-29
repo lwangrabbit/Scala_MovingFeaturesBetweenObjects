@@ -4,4 +4,5 @@ class PersonForHideDelegate(val department: DepartmentForHideDelegate, val name:
   def this(name: String) = {
     this(null, name)
   }
+  def getManager():PersonForHideDelegate = department.manager
 }

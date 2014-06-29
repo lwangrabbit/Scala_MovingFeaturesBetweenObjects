@@ -13,7 +13,8 @@ class HideDelegateFact extends FunSpec with Matchers {
       val manager = new PersonForHideDelegate(managerName);
       val departmentForHideDelegate = new DepartmentForHideDelegate(manager);
       val employee = new PersonForHideDelegate(departmentForHideDelegate, "John");
-      val managerForEmployee = employee.department.manager
+      //val managerForEmployee = employee.department.manager
+      val managerForEmployee = employee.getManager()
       managerForEmployee.name should be(managerName)
     }
   }
