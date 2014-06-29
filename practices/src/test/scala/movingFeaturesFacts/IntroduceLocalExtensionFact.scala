@@ -5,6 +5,7 @@ import org.scalatest.junit.JUnitRunner
 import org.scalatest.{Matchers, FunSpec}
 import java.util.{Calendar, GregorianCalendar}
 import movingFeatures.IntroduceForeignMethod.DateManager
+import movingFeatures.IntroduceLocalExtension.MyCalendar
 
 @RunWith(classOf[JUnitRunner])
 class IntroduceLocalExtensionFact extends FunSpec with Matchers {
@@ -12,8 +13,10 @@ class IntroduceLocalExtensionFact extends FunSpec with Matchers {
     it("should_get_correct_next_day") {
       val day = 11
       val calendar = createCalendar(day)
-      val dateManager = new DateManager(calendar)
-      dateManager.getDate().get(Calendar.DAY_OF_MONTH) should be(12)
+      //val dateManager = new DateManager(calendar)
+      //dateManager.getDate().get(Calendar.DAY_OF_MONTH) should be(12)
+      val myCalendar = new MyCalendar(calendar)
+      myCalendar.nextDay().get(Calendar.DAY_OF_MONTH) should be (12)
     }
   }
 

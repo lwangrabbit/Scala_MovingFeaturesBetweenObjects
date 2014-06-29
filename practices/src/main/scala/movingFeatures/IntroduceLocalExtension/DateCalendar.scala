@@ -8,3 +8,10 @@ class DateCalendar(previousDate:Calendar) {
     previousDate
   }
 }
+
+class MyCalendar(previousDate:Calendar) {
+  def nextDay():Calendar = {
+    previousDate.add(Calendar.DAY_OF_MONTH, 1)
+    previousDate
+  }
+}
