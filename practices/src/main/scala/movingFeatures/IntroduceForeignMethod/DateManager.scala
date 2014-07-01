@@ -4,12 +4,14 @@ import java.util.Calendar
 
 class DateManager(previousDate:Calendar) {
   def getDate(): Calendar = {
-    nextDay()
-  }
-
-  def nextDay():Calendar = {
-    previousDate.add(Calendar.DAY_OF_MONTH, 1)
-    previousDate
+    val myCalendar = new MyCalendar(previousDate)
+    myCalendar.nextDay()
   }
 }
 
+class MyCalendar(val origin:Calendar){
+  def nextDay():Calendar ={
+    origin.add(Calendar.DAY_OF_MONTH, 1)
+    origin
+  }
+}

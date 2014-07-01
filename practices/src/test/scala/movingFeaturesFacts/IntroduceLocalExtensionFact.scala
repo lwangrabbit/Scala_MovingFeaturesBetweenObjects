@@ -13,9 +13,8 @@ class IntroduceLocalExtensionFact extends FunSpec with Matchers {
     it("should_get_correct_next_day") {
       val day = 11
       val calendar = createCalendar(day)
-      //val dateManager = new DateManager(calendar)
-      //dateManager.getDate().get(Calendar.DAY_OF_MONTH) should be(12)
-      MyCalendar.nextDay(calendar).get(Calendar.DAY_OF_MONTH) should be (12)
+      val dateManager = new DateManager(calendar)
+      dateManager.getDate().get(Calendar.DAY_OF_MONTH) should be(12)
     }
   }
 
